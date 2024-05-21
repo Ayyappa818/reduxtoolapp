@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+
+import Counter from './counter';
+import Todolist from './todolist';
+import Products from './products';
+
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="border border-2 border-info m-2 p-2">
+      <h1>APP</h1>
+      <Counter></Counter>
+      <Todolist></Todolist>
+      <Products></Products>
     </div>
   );
 }
 
-export default App;
+export default (App);
