@@ -5,11 +5,44 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store/store';
 import { Provider } from 'react-redux';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Counter from './Counter';
+import Todolist from './Todolist';
+import Products from './Products';
+import Countries from './countries';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App></App>,
+    children:[
+      {
+        path: "/counter",
+        element: <Counter></Counter>,
+      },
+      {
+        path: "/todolist",
+        element: <Todolist></Todolist>
+      },
+      {
+        path: "/products",
+        element: <Products></Products>
+      },
+      {
+        path: "/countries",
+        element: <Countries></Countries>
+      },
+    ]
+  },
+  
+]);
 root.render(
   <Provider store={store}>
-    <App />
+    <RouterProvider router={router}></RouterProvider>
   </Provider>
 );
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { addtodo } from "./store/Actions";
 function Todolist(props){
     console.log(props)
 
@@ -23,6 +24,6 @@ export default  connect(function(state){
     return state.TodolistReducer
 },function(dispatch){
     return {
-        addtodo:(newtodo)=>{dispatch({type:"ADDTODO",payload:newtodo})}
+        addtodo:(newtodo)=>{dispatch(addtodo(newtodo))}
     }
 })(Todolist)
